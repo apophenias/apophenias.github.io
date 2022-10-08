@@ -1,0 +1,3 @@
+[submodule "jekyll-gitbook"]
+	path = jekyll-gitbook
+	url = https://github.com/sighingnow/jekyll-gitbook
