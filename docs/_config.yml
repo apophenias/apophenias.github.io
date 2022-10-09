@@ -39,20 +39,31 @@ syntax_highlighter_style: colorful
 markdown_ext:     markdown,mkdown,mkdn,mkd,md
 
 # Permalinks
-permalink:        /:categories/:year-:month-:day-:title:output_ext
+permalink:        /:categories/:title:output_ext
 
 exclude:
   - _drafts
 
+collections_dir: SiteContent
 collections:
-  pages:
+  # intelligent evolution of systems
+  ieos:
+    output: true
+    permalink: /:collection/:path/
+  xyz:
+    output: true
+    permalink: /:collection/:path/
+  chickens:
     output: true
     permalink: /:collection/:path/
   humans:
     output: true
     permalink: /:collection/:path/
+  about:
+    output: true
+    permalink: /:collection/:path/
 
-page_width: 800px
+#page_width: 800px
 
 destination:      ./_site
 incremental:      false

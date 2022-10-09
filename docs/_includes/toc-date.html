@@ -20,38 +20,44 @@
             </div>
 
             {% for collection in site.collections %}
-                <div></br>
-                    {{ collection.label }}</div> 
                 {% if collection.output %}
-                    {% assign posts = site[collection.label] %}
-                    <br>
-                    <!-- <div id="subject">{{collection.label}}</div> //-->
-                    {% for post in posts %}
-                        {% if page.url == post.url %}
-                        <li class="chapter active" data-level="1.2" data-path="{{site.baseurl}}{{post.url}}">
-                        {% else %}
-                        <li class="chapter" data-level="1.1" data-path="{{site.baseurl}}{{post.url}}">
-                        {% endif %}
-                            <a href="{{site.baseurl}}{{post.url}}">
-                                {{ post.title | escape }}
-                            </a>
-                            {% if site.toc.enabled %}
-                                {% if page.url == post.url %}
-                                    {% include toc.html html=content h_min=site.toc.h_min h_max=site.toc.h_max %}
-                                {% endif %}
+                    {% if collection.label != "about" and collection.label != "posts" %}
+                        {% assign posts = site[collection.label] %}
+                        <div class="chapter">&nbsp;{{collection.label}}</div>
+                        {% for post in posts %}
+                            {% if page.url == post.url %}
+                            <li class="chapter active" data-level="1.2" data-path="{{site.baseurl}}{{post.url}}">
+                            {% else %}
+                            <li class="chapter" data-level="1.1" data-path="{{site.baseurl}}{{post.url}}">
                             {% endif %}
-                        </li>
-                    {% endfor %}
+                                <a href="{{site.baseurl}}{{post.url}}">
+                                    {{ post.title | escape }}
+                                </a>
+                                {% if site.toc.enabled %}
+                                    {% if page.url == post.url %}
+                                        {% include toc.html html=content h_min=site.toc.h_min h_max=site.toc.h_max %}
+                                    {% endif %}
+                                {% endif %}
+                            </li>
+                        {% endfor %}
 
-                    {% if posts.size > 0 %}
-                        <li class="divider"></li>
+                        {% if posts.size > 0 %}
+                            <li class="divider"></li>
+                        {% endif %}
                     {% endif %}
                 {% endif %}
             {% endfor %}
 
-            <li>
-                admin links here!!! where are them icons from?
-            </li>
+            <div>
+            {% assign about = site["about"] %}
+            {% for post in about %}
+                {% if page.url == post.url %}
+                    [<a class="btn" href="{{site.baseurl}}{{post.url}}"><i class="fa fa-{{ post.faIconClass | "exclamation-circle" }}"></i></a>]
+                {% else %}
+                    <a class="btn" href="{{site.baseurl}}{{post.url}}"><i class="fa fa-{{ post.faIconClass | "exclamation-circle" }}"></i></a>
+                {% endif %}    
+            {% endfor %}
+            </div></li>
         </ul>
     </nav>
 </div>
