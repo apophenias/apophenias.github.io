@@ -44,7 +44,7 @@ permalink:        /:categories/:title:output_ext
 exclude:
   - _drafts
 
-collections_dir: SiteContent
+collections_dir: _site.content
 collections:
   # intelligent evolution of systems
   ieos:
