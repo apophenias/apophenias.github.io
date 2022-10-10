@@ -50,12 +50,6 @@ collections:
   ieos:
     output: true
     permalink: /:collection/:path/
-  xyz:
-    output: true
-    permalink: /:collection/:path/
-  chickens:
-    output: true
-    permalink: /:collection/:path/
   humans:
     output: true
     permalink: /:collection/:path/
