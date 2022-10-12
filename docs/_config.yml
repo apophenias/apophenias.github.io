@@ -282,12 +282,13 @@ compress_html:
 
 # Defaults
 defaults:
-  # _posts
+  # everything
   - scope:
       path: ""
-      type: posts
     values:
-      layout: single
+      toc: true
+      toc_label: "On this page..."
+      toc_icon: "list-alt"
       author_profile: false
       read_time: true
       show_date: true
@@ -295,3 +296,12 @@ defaults:
       comments: false 
       share: true
       related: true
+      sidebar:
+        nav: "siteSections"
+  # _posts
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: single
+      #classes: wide
