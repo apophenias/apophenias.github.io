@@ -305,3 +305,13 @@ defaults:
     values:
       layout: single
       #classes: wide
+
+# this is how the site is structured
+collections_dir: site_content
+collections:
+  humans:
+    output: true
+  idies: # intelligent design in evolved systems
+    output: true
+  bits:
+    output: true
