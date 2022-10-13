@@ -15,5 +15,10 @@
       {% include nav_list nav=page.sidebar.nav %}
     {% endif %}
   {% endif %}
+  <ul>
+  {% for item in site.pages %}
+    <li><a href="{{ item.url }}">{{ item.title }}</a></li>
+  {% endfor %}
+  </ul>
   </div>
 {% endif %}
