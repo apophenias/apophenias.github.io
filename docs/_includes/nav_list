@@ -16,7 +16,7 @@
         {% endif %}
 
         <ul>
-          {% for child in site[collection.label] %}
+          {% for child in site[nav.label] %}
             <li><a href="{{ child.url | relative_url }}"{% if child.url == page.url %} class="active"{% endif %}>{{ child.title }}</a></li>
           {% endfor %}
         </ul>
