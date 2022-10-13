@@ -1,3 +1,5 @@
+<!-- DEBUG: trying to use collections, sort of using https://stackoverflow.com/a/52219979 -->
+
 {% assign navigation = site.data.navigation[include.nav] %}
 
 <nav class="nav__list">
