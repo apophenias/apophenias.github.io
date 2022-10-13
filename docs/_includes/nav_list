@@ -15,13 +15,11 @@
           <span class="nav__sub-title">{{ nav.title }}</span>
         {% endif %}
 
-        {% if site[collection.label] != null %}
         <ul>
           {% for child in site[collection.label] %}
             <li><a href="{{ child.url | relative_url }}"{% if child.url == page.url %} class="active"{% endif %}>{{ child.title }}</a></li>
           {% endfor %}
         </ul>
-        {% endif %}
       </li>
     {% endfor %}
   </ul>
