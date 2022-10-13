@@ -310,8 +310,17 @@ defaults:
 collections_dir: site_content
 collections:
   humans:
+    permalink: /:title/:path
+    title: humans
+    date: 2022-10-13
     output: true
   idies: # intelligent design in evolved systems
+    permalink: /:title/:path
+    title: IDIES
+    date: 2022-10-13
     output: true
   bits:
+    permalink: /:title/:path
+    title: bits
+    date: 2022-10-13
     output: true
