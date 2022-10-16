@@ -3,13 +3,17 @@
 {% assign navigation = site.data.navigation[include.nav] %}
 
 DEBUG1
-{% for collection in site.collections %}
-{% assign name = collection.label %}
-  <h1>{{ name }}</h1>
-  {% for post in site.[name].docs %}
-  <ul>
-    <li><a href="{{ post.url }}">{{ post.title }}</a></li>
-  </ul>
+{% for dir in site.collections %}
+  {% assign collection = dir.label %}
+  <b>{{ collection }}</b>
+  [<b>{{ dir.count }}</b>]
+  
+  {% for page in site[collection] %}
+    <li>
+      <img class='collection-icon' src="{{ src }}" alt="">
+      <h2> <a href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a> </h2>
+      <small>{{ page.date | date: "%b %-d, %Y" }}</small>
+    </li>
   {% endfor %}
 {% endfor %}
 DEBUG0

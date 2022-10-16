@@ -296,8 +296,8 @@ defaults:
       comments: false 
       share: true
       related: true
-      sidebar:
-        nav: "siteSections"
+      #sidebar:
+      #  nav: "siteSections"
   # _posts
   - scope:
       path: ""
