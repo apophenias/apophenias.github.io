@@ -2,6 +2,19 @@
 
 {% assign navigation = site.data.navigation[include.nav] %}
 
+DEBUG1
+{% for collection in site.collections %}
+{% assign name = collection.label %}
+  <h1>{{ name }}</h1>
+  {% for post in site.[name].docs %}
+  <ul>
+    <li><a href="{{ post.url }}">{{ post.title }}</a></li>
+  </ul>
+  {% endfor %}
+{% endfor %}
+DEBUG0
+
+
 <nav class="nav__list">
   {% if page.sidebar.title %}<h3 class="nav__title" style="padding-left: 0;">{{ page.sidebar.title }}</h3>{% endif %}
   <input id="ac-toc" name="accordion-toc" type="checkbox" />
@@ -15,11 +28,13 @@
           <span class="nav__sub-title">{{ nav.title }}</span>
         {% endif %}
 
+        
         <ul>
-          {% for child in site[nav.label] %}
+          {% for child in site.[nav.label].docs %}
             <li><a href="{{ child.url | relative_url }}"{% if child.url == page.url %} class="active"{% endif %}>{{ child.title }}</a></li>
           {% endfor %}
         </ul>
+        
       </li>
     {% endfor %}
   </ul>
